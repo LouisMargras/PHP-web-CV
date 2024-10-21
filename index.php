@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My First PHP Page</title>
-</head>
-<body>
-<h1>Welcome to my PHP page!</h1>
 <?php
-echo "<p>Today is " . date("Y-m-d") . "</p>";
+header('Location: /accueil');
 ?>
-</body>
-</html>
+session_start();
+
+if (isset($_POST['dark_mode'])) {
+    $_SESSION['dark_mode'] = $_POST['dark_mode'];
+}
+<?php
+session_start();
+$dark_mode_class = isset($_SESSION['dark_mode']) && $_SESSION['dark_mode'] === 'enabled' ? 'dark-mode' : '';
+?>
+<body class="<?php echo $dark_mode_class; ?>">

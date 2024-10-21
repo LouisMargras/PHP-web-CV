@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Portfolio - Accueil</title>
+    <link rel="stylesheet" href="/style/accueil.css">
+</head>
+<body>
+
+    <div class="switch" style="position: absolute; top: 15px; right: 35px;">
+        <input type="checkbox" id="btn">
+        <span class="slider"></span>
+    </div>
+    <!-- Header avec menu de navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Mon CV Portfolio</h1>
+            </div>
+            <div class="links">
+            <ul class="nav-links">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">CV</a></li>
+                <li><a href="#">Projets</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Profil</a></li>
+            </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Section Hero/Bannière -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Bienvenue sur mon Portfolio</h2>
+            <p>Découvrez mon parcours, mes compétences et mes projets.</p>
+            <a href="#projects" class="btn">Voir mes projets</a>
+        </div>
+    </section>
+
+    <!-- Section Présentation -->
+    <section class="about">
+        <h2>À propos de moi</h2>
+        <p>
+            Je suis un développeur web passionné avec une expérience dans la création de sites web dynamiques et interactifs. 
+            J'aime relever de nouveaux défis et apporter des solutions innovantes.
+        </p>
+    </section>
+
+    <!-- Section Projets -->
+    <section id="projects" class="projects">
+        <h2>Mes Projets</h2>
+        <div class="project-grid">
+            <div class="project">
+                <img src="project1.jpg" alt="Projet 1">
+                <h3>Projet 1</h3>
+                <p>Un projet de développement web pour un client avec des fonctionnalités avancées.</p>
+            </div>
+            <div class="project">
+                <img src="project2.jpg" alt="Projet 2">
+                <h3>Projet 2</h3>
+                <p>Création d'une application mobile pour faciliter la gestion des tâches quotidiennes.</p>
+            </div>
+            <div class="project">
+                <img src="project3.jpg" alt="Projet 3">
+                <h3>Projet 3</h3>
+                <p>Développement d'un site e-commerce complet avec système de paiement intégré.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Script pour le Dark Mode -->
+    <script>
+        const toggleButton = document.getElementById('btn');
+        
+        // Bascule entre le mode sombre et clair
+        toggleButton.addEventListener('change', () => {
+            if (toggleButton.checked) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled'); // Enregistrer la préférence
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled'); // Enregistrer la préférence
+            }
+        });
+
+        // Charger le mode depuis le localStorage si déjà défini
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            toggleButton.checked = true; // Activer le bouton si le mode sombre est activé
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Mon CV Portfolio. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
