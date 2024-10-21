@@ -7,7 +7,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
-<body >
+<body>
 <div class="wrapper" id="loginForm">
     <form action="/login.php" method="post">
 
@@ -43,20 +43,6 @@
                 <a href="#registerForm">Register</a>
             </p>
         </div>
-
-        <script>
-            let input = document.querySelector('.input-boxPass input')
-            let showBtn = document.querySelector('.eyePassword i')
-            showBtn.onclick = function () {
-                if (input.type === "password") {
-                    input.type = "text";
-                    showBtn.classList.add('active');
-                } else {
-                    input.type = "password";
-                    showBtn.classList.remove('active');
-                }
-            }
-        </script>
     </form>
 </div>
 
@@ -110,7 +96,6 @@
         <button type="submit" class="btn">Register</button>
     </form>
 </div>
-
 <script src='../script/connexion.js'></script>
 </body>
 </html>

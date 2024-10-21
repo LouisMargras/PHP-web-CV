@@ -1,7 +1,7 @@
 <?php
 session_start(); // Démarre la session
 
-// Vérifie si l'utilisateur est connecté
+/* Vérifie si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
     // Si l'utilisateur n'est pas connecté, redirige vers la page de connexion
     header('Location: /login');
@@ -9,7 +9,8 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Récupère le nom de l'utilisateur connecté
-$user_name = $_SESSION['username'];
+$user_name = $_SESSION['username'];*/
+
 ?>
 
 <!DOCTYPE html>
@@ -72,17 +73,17 @@ $user_name = $_SESSION['username'];
         <h2>Mes Projets</h2>
         <div class="project-grid">
             <div class="project">
-                <img src="project1.jpg" alt="Projet 1">
+                <img src="../img/projet1.jpg" alt="Projet 1">
                 <h3>Projet 1</h3>
                 <p>Un projet de développement web pour un client avec des fonctionnalités avancées.</p>
             </div>
             <div class="project">
-                <img src="project2.jpg" alt="Projet 2">
+                <img src="../img/projet2.jpg" alt="Projet 2">
                 <h3>Projet 2</h3>
                 <p>Création d'une application mobile pour faciliter la gestion des tâches quotidiennes.</p>
             </div>
             <div class="project">
-                <img src="project3.jpg" alt="Projet 3">
+                <img src="../img/projet3.jpg" alt="Projet 3">
                 <h3>Projet 3</h3>
                 <p>Développement d'un site e-commerce complet avec système de paiement intégré.</p>
             </div>
