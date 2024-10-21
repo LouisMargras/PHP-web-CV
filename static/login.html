@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/loginscription.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body >
+<div class="wrapper" id="loginForm">
+    <form action="/login.php" method="post">
+
+        <h1>Login</h1>
+
+        <div class="guest-mode">
+            <p>You want to go in it with Guest mode ?
+                <a href="/accueil">CV-THEQUE</a>
+            </p>
+        </div>
+
+        <div class="input-boxUser">
+            <label>
+                <input type="text" id="username" name="username" placeholder="Username" required>
+            </label>
+            <i class='bx bxs-user'></i>
+        </div>
+
+        <div class="input-boxPass">
+            <label>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </label>
+            <div class="eyePassword">
+                <i class="fa-solid fa-eye"></i>
+            </div>
+            <i class='bx bxs-lock'></i>
+        </div>
+
+        <button id="LoginButton" type="submit" class="btn">Login</button>
+
+        <div class="register-link">
+            <p>Don't have an account ?
+                <a href="#registerForm">Register</a>
+            </p>
+        </div>
+
+        <script>
+            let input = document.querySelector('.input-boxPass input')
+            let showBtn = document.querySelector('.eyePassword i')
+            showBtn.onclick = function () {
+                if (input.type === "password") {
+                    input.type = "text";
+                    showBtn.classList.add('active');
+                } else {
+                    input.type = "password";
+                    showBtn.classList.remove('active');
+                }
+            }
+        </script>
+    </form>
+</div>
+
+<div class="wrapper-register" id="registerForm">
+
+    <form action="../script/connexion.js" method="post">
+
+        <div class="back-to-login">
+            <i class='bx bx-chevron-left'></i>
+            <p><a href="#loginForm" class="login-link">Login</a></p>
+        </div>
+
+        <h1>Register</h1>
+
+        <div class="input-box">
+            <input type="text" name="name" placeholder="Name" required>
+            <i class='bx bxs-user'></i>
+        </div>
+
+        <div class="input-box">
+            <input type="text" name="surName" placeholder="Surname" required>
+            <i class='bx bxs-user'></i>
+        </div>
+
+        <div class="input-box">
+            <input type="email" name="email" placeholder="Email" required>
+            <i class='bx bxs-envelope'></i>
+        </div>
+
+        <div class="input-boxPass2">
+            <input type="password" name="password" placeholder="Password" required>
+            <div class="eyePassword2">
+                <i class="fa-solid fa-eye"></i>
+            </div>
+
+            <i class='bx bxs-lock'></i>
+        </div>
+        <script>
+            let registerInput = document.querySelector('.input-boxPass2 input')
+            let registerShowBtn = document.querySelector('.eyePassword2 i')
+            registerShowBtn.onclick = function () {
+                if (registerInput.type === "password") {
+                    registerInput.type = "text";
+                    registerShowBtn.classList.add('active');
+                } else {
+                    registerInput.type = "password";
+                    registerShowBtn.classList.remove('active');
+                }
+            }
+        </script>
+        <button type="submit" class="btn">Register</button>
+    </form>
+</div>
+
+<script src='../script/connexion.js'></script>
+</body>
+</html>

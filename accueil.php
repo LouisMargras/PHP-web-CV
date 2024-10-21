@@ -1,17 +1,36 @@
+<?php
+session_start(); // Démarre la session
+
+// Vérifie si l'utilisateur est connecté
+if (!isset($_SESSION['user_id'])) {
+    // Si l'utilisateur n'est pas connecté, redirige vers la page de connexion
+    header('Location: /login');
+    exit;
+}
+
+// Récupère le nom de l'utilisateur connecté
+$user_name = $_SESSION['username'];
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Portfolio - Accueil</title>
+    <title>Accueil</title>
     <link rel="stylesheet" href="/style/accueil.css">
 </head>
 <body>
+    <script>
+        // Affiche un pop-up de bienvenue
+        alert("Bonjour <?php echo htmlspecialchars($user_name); ?>, bienvenue !");
+    </script>
 
     <div class="switch" style="position: absolute; top: 15px; right: 35px; z-index: 1000;">
         <input type="checkbox" id="btnD" style="width: 100px; height: 50px;">
         <span class="slider"></span>
     </div>
+
     <!-- Header avec menu de navigation -->
     <header>
         <nav>
@@ -19,13 +38,13 @@
                 <h1>Mon CV Portfolio</h1>
             </div>
             <div class="links">
-            <ul class="nav-links">
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">CV</a></li>
-                <li><a href="#">Projets</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Profil</a></li>
-            </ul>
+                <ul class="nav-links">
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">CV</a></li>
+                    <li><a href="#">Projets</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Profil</a></li>
+                </ul>
             </div>
         </nav>
     </header>
@@ -69,16 +88,17 @@
             </div>
         </div>
     </section>
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Mon CV Portfolio. Tous droits réservés.</p>
     </footer>
 
-     <!-- Script pour le Dark Mode -->
-     <script>
+    <!-- Script pour le Dark Mode -->
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             const toggleButton = document.getElementById('btnD');
-            
+
             if (!toggleButton) {
                 console.error('Toggle button not found!');
                 return;

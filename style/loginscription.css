@@ -1,0 +1,302 @@
+@import url("https://font.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #2443d7;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.wrapper, .wrapper-register, .forgot-password {
+    width: 420px;
+    background: #2443d7;
+    color: #fff;
+    padding: 30px 40px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 25px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(1.1px);
+    -webkit-backdrop-filter: blur(1.1px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    flex-shrink: 0; /* Empêche la réduction */
+    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wrapper:hover, .wrapper-register:hover, .forgot-password:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transform: perspective(900px) rotateX(2deg) rotateY(2deg);
+}
+
+.wrapper {
+    display: block;
+}
+
+.wrapper-register {
+    display: none;
+}
+
+.forgot-password {
+    display: none;
+}
+
+.wrapper h1, .wrapper-register h1, .forgot-password h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.input-box, .input-boxUser, .input-boxPass, .input-boxPass2 {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.wrapper:target, .forgot-password:target, .wrapper-register:target {
+    display: block;
+}
+
+.input-box input, .input-boxUser input, .input-boxPass input, .input-boxPass2 input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder, .input-boxUser input::placeholder, .input-boxPass input::placeholder, .input-boxPass2 input::placeholder {
+    color: #fff;
+}
+
+.input-box i, .input-boxUser i, .input-boxPass i, .input-boxPass2 i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.wrapper .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+
+.remember-forgot label input {
+    accent-color: #fff;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.wrapper .btn, .wrapper-register .btn, .forgot-password .btn {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: 0;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.412);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.wrapper .register-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.register-link p a, .guest-mode p a, .back-to-login p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover, .guest-mode p a:hover {
+    text-decoration: underline;
+}
+
+.guest-mode {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.guest-mode a {
+    color: #fff;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.guest-mode p {
+    font-weight: normal;
+    color: #fff;
+    text-decoration: none;
+}
+
+.Connexion-Container {
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    padding: 5px;
+    margin: 0 auto 5px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.3px);
+    -webkit-backdrop-filter: blur(8.3px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.other-connexion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.other-connexion i {
+    font-size: 35px;
+}
+
+.other-connexion #google-link:hover {
+    background: linear-gradient(135deg, #4285F4 25%, #34A853 25%, #34A853 50%, #FBBC05 50%, #FBBC05 75%, #EA4335 75%);
+    color: white;
+    border-radius: 10px;
+}
+
+.other-connexion #github-link:hover {
+    background: white;
+    font-weight: bold;
+    color: black;
+    border-radius: 10px;
+}
+
+.other-connexion a#facebook-link:hover {
+    background: linear-gradient(135deg, #00A4E4, #1877F2);
+    color: white;
+    border-radius: 10px;
+}
+
+.back-to-login i {
+    position: absolute;
+    left: 20px;
+    color: white;
+    height: 50px;
+}
+
+.eyePassword i, .eyePassword2 i {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.eyePassword i.active::before, .eyePassword2 i.active2::before {
+    content: '\f070';
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .wrapper, .wrapper-register, .forgot-password {
+        width: 100%;
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    .wrapper, .wrapper-register, .forgot-password, .Connexion-Container {
+        margin: 10px;
+        box-shadow: none;
+        transform: none;
+    }
+
+    .input-box, .input-boxUser, .input-boxPass, .input-boxPass2 {
+        margin: 15px 0;
+    }
+
+    .wrapper h1, .wrapper-register h1, .forgot-password h1 {
+        font-size: 24px;
+    }
+
+    .wrapper .btn, .wrapper-register .btn, .forgot-password .btn {
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .remember-forgot {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .remember-forgot label input {
+        margin-bottom: 10px;
+    }
+
+    .other-connexion i {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper, .wrapper-register, .forgot-password {
+        padding: 15px;
+    }
+
+    .wrapper h1, .wrapper-register h1, .forgot-password h1 {
+        font-size: 20px;
+    }
+
+    .input-box, .input-boxUser, .input-boxPass, .input-boxPass2 {
+        height: 40px;
+    }
+
+    .input-box input, .input-boxUser input, .input-boxPass input, .input-boxPass2 input {
+        padding: 10px 35px 10px 10px;
+    }
+
+    .input-box i, .input-boxUser i, .input-boxPass i, .input-boxPass2 i {
+        right: 10px;
+        font-size: 18px;
+    }
+
+    .wrapper .btn, .wrapper-register .btn, .forgot-password .btn {
+        height: 35px;
+        font-size: 12px;
+    }
+
+    .other-connexion i {
+        font-size: 20px;
+    }
+}

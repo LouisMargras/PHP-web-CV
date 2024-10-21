@@ -1,2 +1,10 @@
 RewriteEngine On
+
+# Route pour l'accueil
 RewriteRule ^accueil$ static/accueil.html [L]
+
+# Route pour la page d'inscription et de connexion
+RewriteRule ^login$ static/login.html [L]
+
+# Route pour la page d'accueil USER
+RewriteRule ^accueilUser$ accueil.php [L]
