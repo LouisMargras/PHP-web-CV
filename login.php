@@ -8,22 +8,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Connexion à la base de données
     try {
-        $db = new PDO('mysql:host=localhost;dbname=CVTHEQUEPHP;charset=utf8', 'rooteur', 'cavapaslatete');
+        $db = new PDO('mysql:host=localhost;dbname=CVTHEQUEPHP;charset=utf8', 'root', '');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+        $username = trim(strtolower($_POST['username']));
+        $password = trim($_POST['password']);
+
         // Préparer la requête avec un filtre par username
-        $stmt = $db->prepare("SELECT id, password FROM user WHERE username = :username");
+        $stmt = $db->prepare("SELECT id, username, password FROM user WHERE username = :username");
         $stmt->execute([':username' => $username]);
 
         // Récupérer les résultats
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user) {
-            // Vérification du mot de passe
-            if (password_verify($password, $hashed_password['password'])) {
+            // Vérification du mot de passe saisi avec le mot de passe haché
+            if (password_verify($password, $user['password'])) {
                 // Mot de passe correct, définir la session ou le cookie
                 $_SESSION['user_id'] = $user['id'];
-                $_SESSION['user_name'] = $username; // Sauvegarde du nom d'utilisateur
+                $_SESSION['user_name'] = $user['username']; // Sauvegarde du nom d'utilisateur
                 header('Location: /accueil'); // Redirection vers la page d'accueil
                 exit();
             } else {

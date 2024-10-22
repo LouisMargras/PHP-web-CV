@@ -1,7 +1,7 @@
 <?php
 session_start(); // Démarre la session
 
-/* Vérifie si l'utilisateur est connecté
+// Vérifie si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
     // Si l'utilisateur n'est pas connecté, redirige vers la page de connexion
     header('Location: /login');
@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Récupère le nom de l'utilisateur connecté
-$user_name = $_SESSION['username'];*/
+$user_name = $_SESSION['username'];
 
 ?>
 

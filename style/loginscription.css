@@ -33,7 +33,6 @@ body {
     -webkit-backdrop-filter: blur(1.1px);
     border: 1px solid rgba(255, 255, 255, 0.25);
     flex-shrink: 0; /* Empêche la réduction */
-    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -43,11 +42,13 @@ body {
 }
 
 .wrapper {
+    margin-right: 20px;
     display: block;
 }
 
 .wrapper-register {
-    display: none;
+    margin-left: 20px;
+    display: block;
 }
 
 .forgot-password {

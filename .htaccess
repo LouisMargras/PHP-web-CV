@@ -10,4 +10,4 @@ RewriteRule ^login$ static/login.html [L]
 RewriteRule ^accueilUser$ accueil.php [L]
 
 # Route pour la page de profil
-RewriteRule ^accueilUser$ static/profil.html [L]
+RewriteRule ^profil$ static/profil.html [L]
