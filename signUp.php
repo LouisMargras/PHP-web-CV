@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $db = new PDO('mysql:host=localhost;dbname=CVTHEQUEPHP;charset=utf8', 'root', '');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        // Insertion dans la base de données avec le mot de passe hashé et le nom
+        // Insertion dans la base de données avec le mot de passe hashé
         $stmt = $db->prepare("INSERT INTO user (name, surname, username, email, password) VALUES (:name, :surname, :username, :email, :password)");
         $stmt->execute([
             ':name' => $name,
@@ -37,5 +37,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Erreur de connexion à la base de données : " . $e->getMessage();
     }
 }
-
 ?>
