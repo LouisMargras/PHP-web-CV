@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($user) {
             // Vérification du mot de passe
-            if (password_verify($password, $user['password'])) {
+            if (password_verify($password, $hashed_password['password'])) {
                 // Mot de passe correct, définir la session ou le cookie
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['user_name'] = $username; // Sauvegarde du nom d'utilisateur
