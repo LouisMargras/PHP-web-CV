@@ -11,3 +11,6 @@ RewriteRule ^accueilUser$ accueil.php [L]
 
 # Route pour la page de profil
 RewriteRule ^profil$ static/profil.html [L]
+
+# Route pour la page de contact
+RewriteRule ^contact$ static/contact.html [L]

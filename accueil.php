@@ -17,7 +17,7 @@ $user_name = $_SESSION['username'] ?? 'Invité';
 <body>
     <script>
         // Affiche un pop-up de bienvenue
-        alert("Bonjour <?php echo htmlspecialchars($username); ?>, bienvenue sur ce site de CV-THEQUE!");
+        alert("Bonjour <?php echo htmlspecialchars($user_name); ?>, bienvenue sur ce site de CV-THEQUE!");
     </script>
 
     <div class="switch" style="position: absolute; top: 15px; right: 35px; z-index: 1000;">
