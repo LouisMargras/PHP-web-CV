@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
 
     // Hachage du mot de passe avec password_hash()
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    //$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Connexion à la base de données
     try {
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             ':surname' => $surname,
             ':username' => $username,
             ':email' => $email,
-            ':password' => $hashed_password
+            ':password' => $password
         ]);
 
         echo '<script>
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 icon: "success"
             });
         </script>';
-        header('Location: /accueil'); // Redirection vers la page d'accueil
+        header('Location: routes.php?page=accueil'); // Redirection vers la page d'accueil
         exit();
     } catch (PDOException $e) {
         echo "Erreur de connexion à la base de données : " . $e->getMessage();

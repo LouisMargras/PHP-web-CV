@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Portfolio - Accueil</title>
-    <link rel="stylesheet" href="/style/accueil.css">
+    <link rel="stylesheet" href="/style/accueilUser.css">
 </head>
 <body>
+    <script>
+        // Affiche un pop-up de bienvenue
+        alert("Bonjour <?php echo htmlspecialchars($user_name); ?>, bienvenue sur ce site de CV-THEQUE!");
+    </script>
 
     <div class="switch" style="position: absolute; top: 15px; right: 35px; z-index: 1000;">
         <input type="checkbox" id="btnD" style="width: 100px; height: 50px;">
@@ -19,13 +23,13 @@
                 <h1>Mon CV Portfolio</h1>
             </div>
             <div class="links">
-            <ul class="nav-links">
-                <a href="/accueil" class="btn">Accueil</a>
-                <a href="#" class="btn">CV</a>
-                <a href="#projects" class="btn">Projets</a>
-                <a href="#" class="btn">Contact</a>
-                <a href="#profil">Profil</a>
-            </ul>
+                <ul class="nav-links">
+                    <li><a href="routes.php?page=accueilUser">Accueil</a></li>
+                    <li><a href="routes.php?page=cv">CV</a></li>
+                    <li><a href="routes.php?page=projets">Projets</a></li>
+                    <li><a href="routes.php?page=contact">Contact</a></li>
+                    <li><a href="routes.php?page=login">Connexion</a></li>
+                </ul>
             </div>
         </nav>
     </header>
@@ -52,18 +56,18 @@
     <section id="projects" class="projects">
         <h2>Mes Projets</h2>
         <div class="project-grid">
-            <div class="project">
-                <img src="project1.jpg" alt="Projet 1">
+            <div class="project1">
+                <img src="../img/projet1.jpg" alt="Projet 1">
                 <h3>Projet 1</h3>
                 <p>Un projet de développement web pour un client avec des fonctionnalités avancées.</p>
             </div>
-            <div class="project">
-                <img src="project2.jpg" alt="Projet 2">
+            <div class="project2">
+                <img src="../img/projet2.jpg" alt="Projet 2">
                 <h3>Projet 2</h3>
                 <p>Création d'une application mobile pour faciliter la gestion des tâches quotidiennes.</p>
             </div>
-            <div class="project">
-                <img src="project3.jpg" alt="Projet 3">
+            <div class="project3">
+                <img src="../img/projet3.jpg" alt="Projet 3">
                 <h3>Projet 3</h3>
                 <p>Développement d'un site e-commerce complet avec système de paiement intégré.</p>
             </div>
@@ -71,7 +75,7 @@
     </section>
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Mon CV Portfolio. Tous droits réservés.</p>
+        <p>&copy; 2024 Ma CV-THEQUE. Tous droits réservés.</p>
     </footer>
 
      <!-- Script pour le Dark Mode -->

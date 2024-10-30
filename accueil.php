@@ -1,15 +1,8 @@
 <?php
 session_start(); // Démarre la session
 
-// Vérifie si l'utilisateur est connecté
-if (!isset($_SESSION['user_id'])) {
-    // Si l'utilisateur n'est pas connecté, redirige vers la page de connexion
-    header('Location: /login');
-    exit;
-}
-
 // Récupère le nom de l'utilisateur connecté
-$user_name = $_SESSION['username'];
+$user_name = $_SESSION['username'] ?? 'Invité';
 
 ?>
 
@@ -24,7 +17,7 @@ $user_name = $_SESSION['username'];
 <body>
     <script>
         // Affiche un pop-up de bienvenue
-        alert("Bonjour <?php echo htmlspecialchars($user_name); ?>, bienvenue !");
+        alert("Bonjour <?php echo htmlspecialchars($username); ?>, bienvenue sur ce site de CV-THEQUE!");
     </script>
 
     <div class="switch" style="position: absolute; top: 15px; right: 35px; z-index: 1000;">
@@ -40,11 +33,11 @@ $user_name = $_SESSION['username'];
             </div>
             <div class="links">
                 <ul class="nav-links">
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">CV</a></li>
-                    <li><a href="#">Projets</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Profil</a></li>
+                    <li><a href="routes.php?page=accueil">Accueil</a></li>
+                    <li><a href="routes.php?page=cv">CV</a></li>
+                    <li><a href="routes.php?page=projets">Projets</a></li>
+                    <li><a href="routes.php?page=contact">Contact</a></li>
+                    <li><a href="routes.php?page=profil">Profil</a></li>
                 </ul>
             </div>
         </nav>
@@ -72,17 +65,17 @@ $user_name = $_SESSION['username'];
     <section id="projects" class="projects">
         <h2>Mes Projets</h2>
         <div class="project-grid">
-            <div class="project">
+            <div class="project1">
                 <img src="../img/projet1.jpg" alt="Projet 1">
                 <h3>Projet 1</h3>
                 <p>Un projet de développement web pour un client avec des fonctionnalités avancées.</p>
             </div>
-            <div class="project">
+            <div class="project2">
                 <img src="../img/projet2.jpg" alt="Projet 2">
                 <h3>Projet 2</h3>
                 <p>Création d'une application mobile pour faciliter la gestion des tâches quotidiennes.</p>
             </div>
-            <div class="project">
+            <div class="project3">
                 <img src="../img/projet3.jpg" alt="Projet 3">
                 <h3>Projet 3</h3>
                 <p>Développement d'un site e-commerce complet avec système de paiement intégré.</p>

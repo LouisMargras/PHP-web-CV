@@ -23,11 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($user) {
             // Vérification du mot de passe saisi avec le mot de passe haché
-            if (password_verify($password, $user['password'])) {
+            //if (password_verify($password, $user['password'])) {
+            if ($password === $user['password']) {
                 // Mot de passe correct, définir la session ou le cookie
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['user_name'] = $user['username']; // Sauvegarde du nom d'utilisateur
-                header('Location: /accueil'); // Redirection vers la page d'accueil
+                header('Location: routes.php?page=accueil'); // Redirection vers la page d'accueil
                 exit();
             } else {
                 // Mot de passe incorrect
@@ -41,7 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Erreur de connexion à la base de données : " . $e->getMessage();
     }
 } else {
-    // Afficher le formulaire de connexion si la méthode n'est pas POST
-    include 'static/login.html';
+    // Définir la page comme 'login' avant l'inclusion
+    $_GET['page'] = 'login';
+    include 'routes.php';
 }
 ?>

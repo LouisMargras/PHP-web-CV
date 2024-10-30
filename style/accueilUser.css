@@ -162,6 +162,9 @@ header h1 {
     text-align: center;
     transition: background-color 0.3s ease;
     
+    /* Effet glass */
+    filter: blur(8px); /* Flou de l'arrière-plan */
+    -webkit-filter: blur(8px); /* Support pour Safari */
 }
 
 .project1 img, .project2 img, .project3 img {
