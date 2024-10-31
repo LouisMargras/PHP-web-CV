@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer ou Télécharger un CV</title>
+    <link rel="stylesheet" href="/style/cv.css">
+</head>
+<body>
+
+    <div class="switch" style="position: absolute; top: 15px; right: 35px; z-index: 1000;">
+        <input type="checkbox" id="btnD" style="width: 100px; height: 50px;">
+        <span class="slider"></span>
+    </div>
+
+    <button class="back-button" onclick="window.history.back()">Retour</button>
+    
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Mon CV Portfolio</h1>
+            </div>
+            <div class="links">
+                <ul class="nav-links">
+                    <li><a href="/accueil">Accueil</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/profil">Profil</a></li>
+                    <li><a href="/mescv">Mes CV</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="cv-container">
+        <section class="cv-section">
+            <h2>Créez votre CV</h2>
+            <form action="create_cv.php" method="POST">
+                <div class="input-group">
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="input-group">
+                    <label for="surname">Prénom :</label>
+                    <input type="text" id="surname" name="surname" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="CVcontent">Contenu de votre CV :</label>
+                    <textarea type="cvcontent" id="cvContent" name="CVcontent" rows="10.20" required></textarea>
+                </div>
+                <button type="submit" class="btn">Créer CV</button>
+            </form>
+        </section>
+
+        <section class="cv-upload-section">
+            <h2>Téléchargez votre CV</h2>
+            <form action="upload.php" method="POST" enctype="multipart/form-data">
+                <div class="input-group">
+                    <label for="cv">Télécharger votre CV (PDF) :</label>
+                    <input type="file" id="cv" name="cv" accept=".pdf" required>
+                </div>
+                <button type="submit" class="btn">Soumettre</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Script pour le Dark Mode -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButton = document.getElementById('btnD');
+
+            if (!toggleButton) {
+                console.error('Toggle button not found!');
+                return;
+            }
+
+            const toggleSpan = document.querySelector('.switch .slider');
+            toggleSpan.addEventListener('click', function() {
+                toggleButton.checked = !toggleButton.checked; // Change l'état du bouton
+                if (toggleButton.checked) {
+                    document.body.classList.add('dark-mode');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                }
+            });
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Mon CV Portfolio. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

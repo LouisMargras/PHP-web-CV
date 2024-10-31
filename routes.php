@@ -4,10 +4,12 @@ $page = $_GET['page'] ?? 'accueil';
 
 $pages = [
     'accueil' => 'accueil.php',
+    'curivitae' => 'static/cv.html',
     'contact' => 'static/contact.html',
     'login' => 'static/login.html',
-    'profil' => 'static/profil.html',
-    'accueilUser' => 'static/accueil.html',
+    'profil' => 'profil.php',
+    'accueilUser' => 'static/accueilUser.html',
+    'mescv' => 'show_cv.php',
 ];
 
 if (array_key_exists($page, $pages)) {

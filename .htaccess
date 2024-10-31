@@ -14,3 +14,9 @@ RewriteRule ^profil$ static/profil.html [L]
 
 # Route pour la page de contact
 RewriteRule ^contact$ static/contact.html [L]
+
+# Route pour la page de cv
+RewriteRule ^cv$ static/cv.html [L]
+
+# Route pour la page de show_cv
+RewriteRule ^mescv$ show_cv.php [L]

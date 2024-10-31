@@ -1,9 +1,12 @@
 <?php
 session_start(); // Démarre la session
 
-// Récupère le nom de l'utilisateur connecté
-$user_name = $_SESSION['username'] ?? 'Invité';
-
+// Vérifie si l'utilisateur est connecté
+if (isset($_SESSION['username'])) {
+    $user_name = $_SESSION['username'];
+} else {
+    $user_name = "Invité"; // Valeur par défaut si l'utilisateur n'est pas connecté
+}
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +20,11 @@ $user_name = $_SESSION['username'] ?? 'Invité';
 <body>
     <script>
         // Affiche un pop-up de bienvenue
-        alert("Bonjour <?php echo htmlspecialchars($user_name); ?>, bienvenue sur ce site de CV-THEQUE!");
+        Swal.fire({
+                title: "Good job!",
+                text: "User is register !",
+                icon: "success"
+            });
     </script>
 
     <div class="switch" style="position: absolute; top: 15px; right: 35px; z-index: 1000;">
@@ -33,11 +40,11 @@ $user_name = $_SESSION['username'] ?? 'Invité';
             </div>
             <div class="links">
                 <ul class="nav-links">
-                    <li><a href="routes.php?page=accueil">Accueil</a></li>
-                    <li><a href="routes.php?page=cv">CV</a></li>
-                    <li><a href="routes.php?page=projets">Projets</a></li>
-                    <li><a href="routes.php?page=contact">Contact</a></li>
-                    <li><a href="routes.php?page=profil">Profil</a></li>
+                    <li><a href="/accueil">Accueil</a></li>
+                    <li><a href="routes.php?page=curivitae">CV</a></li>
+                    <li><a href="#projects">Projets</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/profil">Profil</a></li>
                 </ul>
             </div>
         </nav>

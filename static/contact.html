@@ -8,13 +8,18 @@
 </head>
 <body>
 
+    <div class="switch" style="position: absolute; top: 15px; right: 35px; z-index: 1000;">
+        <input type="checkbox" id="btnD" style="width: 100px; height: 50px;">
+        <span class="slider"></span>
+    </div>
+
 <button class="back-button" onclick="window.history.back()">Retour</button>
 
     <header>
         <h1>Contactez-nous</h1>
     </header>
     <main>
-        <section>
+        <section id="infoscontact">
             <h2>Informations de contact</h2>
             <p>Vous pouvez nous joindre par les moyens suivants :</p>
             <ul>
@@ -23,7 +28,7 @@
                 <li>Adresse : 123 Rue Du Sieur, 31500 Toulouse, France</li>
             </ul>
         </section>
-        <section>
+        <section id="formulaire">
             <h2>Formulaire de contact</h2>
             <form action="submit_form.php" method="post">
                 <label for="name">Nom :</label>
@@ -42,5 +47,27 @@
     <footer>
         <p>&copy; 2024 Ma CV-THEQUE. Tous droits réservés.</p>
     </footer>
+
+    <!-- Script pour le Dark Mode -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButton = document.getElementById('btnD');
+
+            if (!toggleButton) {
+                console.error('Toggle button not found!');
+                return;
+            }
+
+            const toggleSpan = document.querySelector('.switch .slider');
+            toggleSpan.addEventListener('click', function() {
+                toggleButton.checked = !toggleButton.checked; // Change l'état du bouton
+                if (toggleButton.checked) {
+                    document.body.classList.add('dark-mode');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

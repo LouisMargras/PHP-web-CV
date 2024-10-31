@@ -1,68 +1,190 @@
+/* Variables pour le thème clair (par défaut) */
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --container-bg-color: #fff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --label-color: #555;
+    --input-border-color: #ccc;
+    --button-bg-color: #007BFF;
+    --button-hover-bg: #0056b3;
+}
+
+/* Variables pour le thème sombre */
+body.dark-mode {
+    --background-color: #1e1e1e;
+    --text-color: #f4f4f9;
+    --container-bg-color: #2e2e2e;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --label-color: #aaa;
+    --input-border-color: #444;
+    --button-bg-color: #00796b;
+    --button-hover-bg: #004d40;
+}
+
+/* Styles généraux */
 body {
-    font-family: Georgia, serif;
-    margin: 10px;
+    margin: 0;
     padding: 10px;
-    background-color: #f4f4f4;
+    font-family: Georgia, serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden; 
 }
 
-.container {
-    width: 70%;
-    margin: 0 auto;
+/* Conteneur principal */
+.section {
+    width: 60%; /* Ajuster la largeur pour un meilleur centrage */
+    margin: 40px auto; /* Ajout d'une marge pour le centrage vertical */
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--container-bg-color);
+    box-shadow: 0 4px 20px var(--shadow-color);
+    border-radius: 8px; /* Coins arrondis */
 }
 
+#infoscontact {
+    width: 60%; /* Ajuster la largeur pour un meilleur centrage */
+    margin: 40px auto; /* Ajout d'une marge pour le centrage vertical */
+    padding: 20px;
+    background-color: var(--container-bg-color);
+    box-shadow: 0 4px 20px var(--shadow-color);
+    border-radius: 8px; /* Coins arrondis */
+}
+
+#formulaire {
+    width: 60%; /* Ajuster la largeur pour un meilleur centrage */
+    margin: 40px auto; /* Ajout d'une marge pour le centrage vertical */
+    padding: 20px;
+    background-color: var(--container-bg-color);
+    box-shadow: 0 4px 20px var(--shadow-color);
+    border-radius: 8px; /* Coins arrondis */
+}
+
+/* Titre principal */
 h1 {
     text-align: center;
-    color: #333;
+    color: var(--text-color);
+    margin-bottom: 20px; /* Espace sous le titre */
 }
 
+/* Formulaire */
 form {
     display: flex;
     flex-direction: column;
+    margin: 10px 20px 10px 10px;
 }
 
+/* Étiquettes */
 label {
     margin-bottom: 5px;
-    color: #555;
+    color: var(--label-color);
+    font-weight: bold; /* Mise en évidence des étiquettes */
 }
 
+/* Champs de saisie */
 input[type="text"],
 input[type="email"],
 textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px; /* Espace intérieur augmenté */
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--input-border-color);
     border-radius: 4px;
+    font-size: 16px; /* Augmenter la taille de police */
 }
 
+/* Bouton de soumission */
 input[type="submit"] {
     width: 100%;
-    padding: 10px;
-    background-color: #007BFF;
+    padding: 12px;
+    background-color: var(--button-bg-color);
     border: none;
     border-radius: 4px;
     color: white;
     font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: var(--button-hover-bg);
 }
 
+/* Zone de texte */
 textarea {
     height: 150px;
-    resize: vertical;
+    resize: none;
 }
 
+/* Informations de contact */
 .contact-info {
     margin-top: 20px;
-    color: #555;
+    color: var(--label-color);
 }
 
 .contact-info p {
     margin: 5px 0;
+    text-align: center; /* Centrage des informations de contact */
+}
+
+.back-button {
+    background-color: #444f5b; /* Couleur de fond bleu */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 6px; /* Coins arrondis */
+    padding: 10px 15px; /* Espace intérieur */
+    font-size: 16px; /* Taille de la police */
+    cursor: pointer; /* Curseur en forme de main */
+    margin-left: 20px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease; /* Transition pour l'effet de survol */
+}
+
+.back-button:hover {
+    background-color: #1a538d; /* Couleur de fond en survol */
+}
+
+/* Toggle Switch */
+ .switch {
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
 }

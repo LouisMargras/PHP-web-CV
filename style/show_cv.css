@@ -1,0 +1,197 @@
+/* Mode clair (par défaut) */
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --header-bg-color: #f8f9fa;
+    --nav-link-hover-bg: #e9ecef;
+    --hero-bg-color: #f0f0f0;
+    --about-bg-color: #ffffff;
+    --projects-bg-color: #f9f9f9;
+    --project-bg-color: #ffffff;
+    --footer-bg-color: #f8f9fa;
+    --button-bg-color: #00bfa6;
+    --button-hover-bg: #008573;
+}
+
+/* Mode sombre */
+body.dark-mode {
+    --background-color: #1e1e1e;
+    --text-color: #f4f4f9;
+    --header-bg-color: #444;
+    --nav-link-hover-bg: #555;
+    --hero-bg-color: #2c2c2c;
+    --about-bg-color: #2e2e2e;
+    --projects-bg-color: #3a3a3a;
+    --project-bg-color: #333;
+    --footer-bg-color: #444;
+    --button-bg-color: #00796b;
+    --button-hover-bg: #004d40;
+}
+
+.back-button {
+    background-color: #444f5b; /* Couleur de fond bleu */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 6px; /* Coins arrondis */
+    padding: 10px 15px; /* Espace intérieur */
+    font-size: 16px; /* Taille de la police */
+    cursor: pointer; /* Curseur en forme de main */
+    margin-left: 20px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease; /* Transition pour l'effet de survol */
+}
+
+.btn:hover {
+    background-color: var(--button-hover-bg);
+}
+
+.back-button:hover {
+    background-color: #1a538d; /* Couleur de fond en survol */
+}
+
+body {
+    margin: 0;
+    font-family: 'Free mono', monospace;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--header-bg-color);
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: var(--text-color);
+    font-size: 36px;
+    font-weight: bold;
+}
+
+main {
+    padding: 40px;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    background-color: var(--section-bg-color);
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li a {
+    color: var(--button-bg-color);
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+li a:hover {
+    color: var(--button-hover-bg);
+}
+
+li p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.btn {
+    background-color: var(--button-bg-color);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--button-hover-bg);
+}
+
+footer {
+    background-color: var(--header-bg-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+
+/* Toggle Switch */
+.switch {
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+
+@media (max-width: 768px) {
+    section {
+        padding: 20px;
+    }
+    header h1 {
+        font-size: 28px;
+    }
+}

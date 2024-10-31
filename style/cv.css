@@ -28,17 +28,14 @@ body.dark-mode {
     --button-hover-bg: #004d40;
 }
 
-/* Styles généraux */
 body {
     margin: 0;
     font-family: 'Free mono', monospace;
     background-color: var(--background-color);
     color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
     overflow-x: hidden; /* Évite le débordement horizontal */
 }
 
-/* Header */
 header {
     background-color: var(--header-bg-color);
     padding: 20px;
@@ -51,13 +48,12 @@ header h1 {
     color: var(--text-color);
     font-size: 40px;
     font-weight: bold;
-    display: flex;
     margin-left: 470px;
 }
 
 .links {
     display: flex;
-    margin-left: 330px;
+    margin-left: 410px;
 }
 
 .nav-links {
@@ -85,104 +81,103 @@ header h1 {
     border-radius: 5px;
 }
 
-/* Section Hero/Bannière */
-.hero {
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: var(--hero-bg-color);
-    color: var(--text-color);
+.cv-container {
+    display: flex; 
+    flex-wrap: wrap;
 }
 
-.hero h2 {
-    font-size: 48px;
+.cv-section, .cv-upload-section {
+    box-sizing: border-box; 
+    padding: 50px 20px;
+    background-color: var(--section-bg-color);
+    text-align: center;
+}
+
+.input-group textarea {
+    width: 100%; 
+    padding: 10px; 
+    font-size: 16px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    resize: none;
+}
+
+.cv-section {
+    flex: 0 0 60%; 
+    padding: 50px 20px;
+    background-color: var(--section-bg-color);
+    text-align: center;
+}
+
+.cv-upload-section {
+    flex: 0 0 40%; 
+    padding: 50px 20px;
+    background-color: var(--section-bg-color);
+    text-align: center;
+    border-left: 4px solid #ddd; 
+}
+
+.cv-section h2, .cv-upload-section h2 {
+    font-size: 36px;
     margin-bottom: 20px;
 }
 
-.hero p {
-    font-size: 24px;
-    margin-bottom: 30px;
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
 }
 
 .btn {
     background-color: var(--button-bg-color);
     color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
+    padding: 10px 20px;
     font-size: 18px;
-    border-radius: 30px;
-    transition: background-color 0.3s ease;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-button {
+    background-color: #444f5b; /* Couleur de fond bleu */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 6px; /* Coins arrondis */
+    padding: 10px 15px; /* Espace intérieur */
+    font-size: 16px; /* Taille de la police */
+    cursor: pointer; /* Curseur en forme de main */
+    margin-left: 20px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease; /* Transition pour l'effet de survol */
 }
 
 .btn:hover {
     background-color: var(--button-hover-bg);
 }
 
-/* Section Présentation */
-.about {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: var(--about-bg-color);
-    color: var(--text-color);
+.back-button:hover {
+    background-color: #1a538d; /* Couleur de fond en survol */
 }
 
-.about h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.about p {
-    font-size: 18px;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Section Projets */
-.projects {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
-
-.project-grid {
-    display: flex;
-    gap: 20px; 
-    flex-wrap: wrap; 
-}
-
-.project1, .project2, .project3 {
-    background: rgba(255, 255, 255, 0.28); 
-    padding: 20px;
-    border-radius: 10px; 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-    
-}
-
-.project1 img, .project2 img, .project3 img {
-    width: 100%; 
-    border-radius: 10px; 
-}
-
-/* Footer */
 footer {
-    background-color: var(--footer-bg-color);
+    background-color: var(--header-bg-color);
     color: var(--text-color);
     text-align: center;
     padding: 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
 }
 
- /* Toggle Switch */
- .switch {
+
+/* Toggle Switch */
+.switch {
     width: 60px;
     height: 34px;
 }
@@ -223,4 +218,12 @@ input:checked + .slider {
 
 input:checked + .slider:before {
     transform: translateX(26px);
+}
+
+/* Ajustement pour les petits écrans */
+@media (max-width: 768px) {
+    .cv-section, .cv-upload-section {
+        flex: 0 0 100%; /* Sur petits écrans, chaque section prend 100% de la largeur */
+        margin-bottom: 20px; /* Ajoute un espacement entre les sections */
+    }
 }
