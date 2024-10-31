@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 icon: "success"
             });
         </script>';
-        header('Location: routes.php?page=accueil'); // Redirection vers la page d'accueil
+        header('Location: /routes/routes.php?page=accueil'); // Redirection vers la page d'accueil
         exit();
     } catch (PDOException $e) {
         echo "Erreur de connexion à la base de données : " . $e->getMessage();

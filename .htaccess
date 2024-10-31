@@ -1,22 +1,22 @@
 RewriteEngine On
 
 # Route pour l'accueil
-RewriteRule ^accueil$ static/accueil.html [L]
+RewriteRule ^accueil$ views/templates/accueil.html [L]
 
 # Route pour la page d'inscription et de connexion
-RewriteRule ^login$ static/login.html [L]
+RewriteRule ^login$ views/templates/login.html [L]
 
 # Route pour la page d'accueil USER
-RewriteRule ^accueilUser$ accueil.php [L]
+RewriteRule ^accueilUser$ views/templates/accueilUser.html [L]
 
 # Route pour la page de profil
-RewriteRule ^profil$ static/profil.html [L]
+RewriteRule ^profil$ views/profil.php [L]
 
 # Route pour la page de contact
-RewriteRule ^contact$ static/contact.html [L]
+RewriteRule ^contact$ views/templates/contact.html [L]
 
 # Route pour la page de cv
-RewriteRule ^cv$ static/cv.html [L]
+RewriteRule ^cv$ views/templates/cv.html [L]
 
 # Route pour la page de show_cv
-RewriteRule ^mescv$ show_cv.php [L]
+RewriteRule ^mescv$ views/show_cv.php [L]

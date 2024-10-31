@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once '../config/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['surname'] = $user['surname'];
             $_SESSION['email'] = $user['email'];
 
-            header('Location: routes.php?page=accueil'); // Redirection vers l'accueil
+            header('Location: /routes/routes.php?page=accueil'); // Redirection vers l'accueil
             exit();
         } else {
             echo "Nom d'utilisateur ou mot de passe incorrect.";

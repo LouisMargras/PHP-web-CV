@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/loginscription.css">
+    <link rel="stylesheet" href="/public/style/loginscription.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 <body>
 <div class="wrapper" id="loginForm">
-    <form action="/login.php" method="post">
+    <form action="/controllers/login.php" method="post">
 
         <h1>Login</h1>
 
         <div class="guest-mode">
             <p>You want to go in it with Guest mode ?
-                <a href="routes.php?page=accueilUser">CV-THEQUE</a>
+                <a href="/routes/routes.php?page=accueilUser">CV-THEQUE</a>
             </p>
         </div>
 
@@ -43,7 +43,7 @@
 
 <div class="wrapper-register" id="registerForm">
 
-    <form action="../signUp.php" method="post">
+    <form action="/controllers/signUp.php" method="post">
 
         <h1>Register</h1>
 
